@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khang Truong | Computer Science Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #64748b;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-light: #475569;
+            --accent: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--surface);
+            padding: 80px 0 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .profile-name {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: var(--text-light);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--secondary);
+            transition: color 0.2s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary-dark);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Timeline Items (Education, Experience, Projects) */
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .item-subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .item-details {
+            list-style-type: none;
+        }
+
+        .item-details li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .item-details li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 25px;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+            .item-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="profile-name">Khang Truong</h1>
+            <h2 class="profile-title">Computer Science Student & IT Support Specialist</h2>
+            <div class="contact-info">
+                <a href="mailto:khangtruong1113@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> khangtruong1113@gmail.com
+                </a>
+                <span class="contact-item"><i class="fas fa-phone"></i> (346) 907-1039</span>
+                <a href="https://github.com/khangtruong1113" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i> github.com/khangtruong1113
+                </a>
+                <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Houston, TX</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h3 class="section-title"><i class="fas fa-code"></i> Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Languages & Concepts</div>
+                    <div class="skill-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">OOP</span>
+                        <span class="tag">Data Structures</span>
+                        <span class="tag">VHDL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Tools & Software</div>
+                    <div class="skill-tags">
+                        <span class="tag">Visual Studio / VS Code</span>
+                        <span class="tag">Git & GitHub</span>
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">VPN Clients</span>
+                        <span class="tag">Xilinx Vivado</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Networking & Security</div>
+                    <div class="skill-tags">
+                        <span class="tag">TCP/IP</span>
+                        <span class="tag">DHCP/DNS</span>
+                        <span class="tag">Routers/Switches</span>
+                        <span class="tag">Firewalls</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">AV/EDR</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">IT Operations</div>
+                    <div class="skill-tags">
+                        <span class="tag">Hardware Troubleshooting</span>
+                        <span class="tag">Desktop Support</span>
+                        <span class="tag">POS Systems</span>
+                        <span class="tag">Ticketing Systems</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <h4 class="item-title">Bachelor of Science in Computer Science</h4>
+                    <span class="item-date">Expected Dec 2027</span>
+                </div>
+                <div class="item-subtitle">University of Houston-Clear Lake — Houston, TX</div>
+                <ul class="item-details">
+                    <li><strong>GPA:</strong> 4.0</li>
+                    <li><strong>Coursework:</strong> Advanced Data Structures and Algorithms, Programming Fundamentals, Computer Organization and Assembly, Fundamentals of Network, Data Analytics Fundamentals.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <h4 class="item-title">Associate of Applied Science in Information Technology Security</h4>
+                    <span class="item-date">May 2022</span>
+                </div>
+                <div class="item-subtitle">San Jacinto Community College — Houston, TX</div>
+                <ul class="item-details">
+                    <li><strong>GPA:</strong> 3.40</li>
+                    <li><strong>Coursework:</strong> Operating System Security, Firewalls and Network Security, Implement and Support Servers, Incident Response and Handling.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h3 class="section-title"><i class="fas fa-folder-open"></i> Project Experience</h3>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <h4 class="item-title">SecureNet - Secure Network Monitoring Platform</h4>
+                    <span class="item-date">Fall 2026</span>
+                </div>
+                <div class="item-subtitle">C++, TCP/IP, SQLite</div>
+                <ul class="item-details">
+                    <li>Developed a modular C++ network monitoring application that processes security events and detects brute-force login attempts and port-scanning activity.</li>
+                    <li>Implemented hash-based event tracking and time-window detection logic using C++ data structures to identify suspicious behavior efficiently.</li>
+                    <li>Built a TCP client/server architecture for ingesting events and integrated SQLite for persistent storage of security events and generated alerts.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <h4 class="item-title">AI Desktop Chatbot</h4>
+                    <span class="item-date">Spring 2026</span>
+                </div>
+                <div class="item-subtitle">Python, Tkinter, Ollama, PyInstaller</div>
+                <ul class="item-details">
+                    <li>Developed a fully offline AI chatbot using Python and local LLMs via Ollama to support data privacy and performance.</li>
+                    <li>Built a custom dark-mode GUI in Tkinter with a focus on a modern, user-friendly experience.</li>
+                    <li>Packaged the application as a standalone Windows executable (.exe) with PyInstaller for easy deployment without a local Python installation.</li>
+                    <li>Improved usability by adding a custom application icon and desktop launcher for simplified access.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <h4 class="item-title">Library Management System</h4>
+                    <span class="item-date">Fall 2025</span>
+                </div>
+                <div class="item-subtitle">C++, Object-Oriented Programming</div>
+                <ul class="item-details">
+                    <li>Built a menu-driven console library system to manage books, magazines, and movies; supports search, availability, checkout, and returns.</li>
+                    <li>Applied OOP design with inheritance and polymorphism, using pointers to manage a mixed collection of resource types.</li>
+                    <li>Implemented checkout/return workflows that store borrower info, prevent double checkouts, and update status automatically.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+            <h3 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h3>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <h4 class="item-title">Front Desk Receptionist | IT Support</h4>
+                    <span class="item-date">July 2022 - Present</span>
+                </div>
+                <div class="item-subtitle">Santa Fe Nail and Spa — Santa Fe, TX</div>
+                <ul class="item-details">
+                    <li>Delivered front-desk service (check-in, scheduling, payments) while maintaining accurate customer/appointment data in a digital system.</li>
+                    <li>Diagnosed Wi-Fi, printer, and POS issues and applied systematic troubleshooting to restore service quickly and reduce downtime.</li>
+                    <li>Standardized common fixes into clear step-by-step guidance for staff and performed routine workstation maintenance (updates/performance tuning).</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Khang Truong. Designed for GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
