@@ -39,6 +39,22 @@
         }
 
         /* Header Section */
+        /* Thiết kế cho ảnh đại diện */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px auto;
+            display: block;
+            border: 4px solid var(--surface);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05); 
+        }
         header {
             background-color: var(--surface);
             padding: 80px 0 50px;
@@ -296,7 +312,7 @@
 
     <header>
         <div class="container">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQHiiYFbqvv9OA/profile-displayphoto-crop_800_800/B56Zvs2u5FJ8AI-/0/1769205330203?e=1792627200&v=beta&t=a4Q5wazE6x4D4nFpPp6ZZhl8C_w8uoCR4pumkY-RyI4" alt="Khang Truong" class="profile-img">
+            <img src="avatar.jpg" alt="Khang Truong" class="profile-img">
             <h1 class="profile-name">Khang Truong</h1>
             <h2 class="profile-title">Computer Science Student & IT Support Specialist</h2>
             <div class="contact-info">
