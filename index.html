@@ -133,32 +133,70 @@
             gap: 25px;
         }
 
+        /* Khung bọc từng nhóm kỹ năng (Dạng Card nổi) */
         .skill-category {
-            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.03); /* Nền kính mờ */
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Viền mỏng tinh tế */
+            border-radius: 12px;
+            padding: 25px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hiệu ứng viền phát sáng khi rê chuột vào cả khối */
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
         .skill-category-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--secondary);
-            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 12px;
         }
+
+        /* Tạo màu sắc riêng cho từng Icon danh mục */
+        .skill-category:nth-child(1) .skill-category-title i { color: #3b82f6; } /* Xanh lam */
+        .skill-category:nth-child(2) .skill-category-title i { color: #8b5cf6; } /* Tím */
+        .skill-category:nth-child(3) .skill-category-title i { color: #10b981; } /* Xanh ngọc */
+        .skill-category:nth-child(4) .skill-category-title i { color: #f59e0b; } /* Cam */
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
 
+        /* Thẻ kỹ năng dạng viên thuốc viền mỏng */
         .tag {
-            background: #eff6ff;
-            color: var(--primary-dark);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.875rem;
+            background: transparent;
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 20px; /* Bo tròn hoàn toàn */
+            font-size: 0.85rem;
             font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Hiệu ứng Neon phát sáng khi rê chuột vào thẻ */
+        .tag:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 0 12px var(--primary); /* Đổ bóng Neon */
+            transform: translateY(-2px);
         }
 
         /* Timeline Items (Education, Experience, Projects) */
