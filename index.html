@@ -39,57 +39,58 @@
         }
 
         /* Header Section */
-       .profile-img {
+        header {
+            padding: 60px 0 0 0; /* Đẩy toàn bộ khu vực này xuống thấp một chút */
+            text-align: center;  /* Lệnh quan trọng nhất: Ép mọi thứ vào giữa */
+            width: 100%;
+        }
+
+        .profile-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 60 auto 20px auto;
+            margin: 0 auto 20px auto; /* Tự động căn giữa ảnh */
             display: block;
-            border: 3px solid rgba(59, 130, 246, 0.5); /* Đổi viền thành màu xanh trong suốt */
-            /* Hiệu ứng nhịp đập phát sáng liên tục */
+            border: 3px solid rgba(59, 130, 246, 0.5);
             animation: avatarPulse 2s infinite; 
             transition: transform 0.3s ease;
         }
 
         .profile-img:hover {
-            transform: scale(1.05) rotate(3deg); /* Phóng to và khẽ nghiêng khi rê chuột */
+            transform: scale(1.05) rotate(3deg);
         }
 
-        /* Định nghĩa nhịp thở của vòng sáng Radar */
         @keyframes avatarPulse {
             0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
             70% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
             100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
         }
-        
-        /* Hiệu ứng load trang cho tên */
+
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-       .profile-name {
+        .profile-name {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
-            text-align: center; /* THÊM DÒNG NÀY ĐỂ CĂN GIỮA */
-            width: 100%;        /* THÊM DÒNG NÀY ĐỂ CĂN ĐỀU 2 BÊN */
+            text-align: center;
+            display: block;
             background: linear-gradient(to right, #3b82f6, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: fadeInDown 0.8s ease-out forwards;
         }
 
-        ..profile-title {
+        .profile-title {
             font-size: 1.25rem;
             color: var(--primary);
             font-weight: 500;
             margin-bottom: 25px;
-            /* 3 DÒNG NÀY SẼ BẮT BUỘC CHỮ PHẢI NẰM GIỮA */
             text-align: center;
-            width: 100%;
             display: block;
         }
 
@@ -99,6 +100,7 @@
             gap: 20px;
             flex-wrap: wrap;
             color: var(--text-light);
+            margin-bottom: 50px; /* Tạo khoảng trống rộng rãi với bảng Technical Skills */
         }
 
         .contact-item {
@@ -107,13 +109,13 @@
             gap: 8px;
             text-decoration: none;
             color: var(--secondary);
-            transition: color 0.2s ease;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
         .contact-item:hover {
             color: var(--primary);
+            transform: translateY(-3px);
         }
-
         /* Main Content */
         main {
             padding: 60px 0;
