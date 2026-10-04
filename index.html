@@ -72,9 +72,14 @@
         .profile-name {
             font-size: 3rem;
             font-weight: 800;
-            color: var(--text-main);
             margin-bottom: 10px;
             letter-spacing: -0.5px;
+            /* Bắt đầu hiệu ứng Gradient dải màu (Xanh lam sang Tím) */
+            background: linear-gradient(to right, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Thêm hiệu ứng trượt nhẹ xuống khi load trang */
+            animation: fadeInDown 0.8s ease-out forwards;
         }
 
         .profile-title {
